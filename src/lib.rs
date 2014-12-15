@@ -2,14 +2,13 @@
 extern crate libc;
 
 use libc::{c_void, c_char, c_int, c_ulong, c_float};
-use std::c_str::CString;
 
 pub type RawGeoIp = *const c_void;
 pub type In6Addr = [u8, ..16];
 
 #[repr(C)]
 pub struct GeoIpLookup {
-    netmask: c_int
+    pub netmask: c_int
 }
 
 impl Copy for GeoIpLookup { }
@@ -36,19 +35,19 @@ extern {
 
 #[repr(C)]
 pub struct GeoIpRecord {
-    country_code: *const c_char,
-    country_code3: *const c_char,
-    country_name: *const c_char,
-    region: *const c_char,
-    city: *const c_char,
-    postal_code: *const c_char,
-    latitude: c_float,
-    longitude: c_float,
-    dma_code: c_int,
-    area_code: c_int,
-    charset: c_int,
-    continent_code: *const c_char,
-    netmask: c_int
+    pub country_code: *const c_char,
+    pub country_code3: *const c_char,
+    pub country_name: *const c_char,
+    pub region: *const c_char,
+    pub city: *const c_char,
+    pub postal_code: *const c_char,
+    pub latitude: c_float,
+    pub longitude: c_float,
+    pub dma_code: c_int,
+    pub area_code: c_int,
+    pub charset: c_int,
+    pub continent_code: *const c_char,
+    pub netmask: c_int
 }
 
 impl Copy for GeoIpRecord { }
