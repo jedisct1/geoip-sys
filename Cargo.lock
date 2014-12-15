@@ -1,0 +1,4 @@
+[root]
+name = "geoip-sys"
+version = "0.0.2"
+
